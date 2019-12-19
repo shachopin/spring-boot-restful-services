@@ -25,6 +25,8 @@ public class SolutionsController
                 + "GET /serialize-and-deserialize-binary-tree"
                 + "<br>"
                 + "GET /number-of-islands"
+                + "<br>"
+                + "GET /sliding-puzzle"
                 ;
     }
 
@@ -95,5 +97,26 @@ public class SolutionsController
         NumberOfIslandsSolution sol = new NumberOfIslandsSolution();
         int out = sol.numIslands(input.getGrid());
         return new NumberOfIslandsSolution.Output(out);
+    }
+
+    @GetMapping("/sliding-puzzle")
+    /* requestbody is:
+        {
+            "initState":    [
+                            [2,8,3],
+                            [1,0,4],
+                            [7,6,5]
+                            ],
+            "finalState":   [
+                            [1,2,3],
+                            [8,0,4],
+                            [7,6,5]
+                            ]
+        }
+    */
+    public SlidingPuzzleSolution.Output numIslands(@RequestBody SlidingPuzzleSolution.Input input) {
+        SlidingPuzzleSolution sol = new SlidingPuzzleSolution();
+        int out = sol.minMoveStep(input.getInitState(), input.getFinalState());
+        return new SlidingPuzzleSolution.Output(out);
     }
 }
