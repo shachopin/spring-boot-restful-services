@@ -50,9 +50,9 @@ public class SolutionsController
             "dict": ["hot","dot","dog","lot","log"]
         }
     */
-    public WordLadderSolution.Output worldLadder(@RequestBody final WordLadderSolution.Input input) {
-        final WordLadderSolution sol = new WordLadderSolution();
-        final int out = sol.ladderLength(input.getStart(), input.getEnd(), input.getDict());
+    public WordLadderSolution.Output worldLadder(@RequestBody WordLadderSolution.Input input) {
+        WordLadderSolution sol = new WordLadderSolution();
+        int out = sol.ladderLength(input.getStart(), input.getEnd(), input.getDict());
         return new WordLadderSolution.Output(out);
     }
 
@@ -64,9 +64,9 @@ public class SolutionsController
                     [0,1,0,0,0]]
         }
     */
-    public ZombieMatrixSolution.Output zombieMatrix(@RequestBody final ZombieMatrixSolution.Input input) {
-        final ZombieMatrixSolution sol = new ZombieMatrixSolution();
-        final int out = sol.zombie(input.getGrid());
+    public ZombieMatrixSolution.Output zombieMatrix(@RequestBody ZombieMatrixSolution.Input input) {
+        ZombieMatrixSolution sol = new ZombieMatrixSolution();
+        int out = sol.zombie(input.getGrid());
         return new ZombieMatrixSolution.Output(out);
     }
 
@@ -76,10 +76,10 @@ public class SolutionsController
            "data": "{3,9,20,#,#,15,7}"
         }
     */
-    public SerializeAndDeserializeBinaryTreeSolution.Output serializeAndDeserializeBinaryTree(@RequestBody final SerializeAndDeserializeBinaryTreeSolution.Input input) {
-        final SerializeAndDeserializeBinaryTreeSolution sol = new SerializeAndDeserializeBinaryTreeSolution();
-        final TreeNode root = sol.deserialize(input.getData());
-        final String result = sol.serialize(root);
+    public SerializeAndDeserializeBinaryTreeSolution.Output serializeAndDeserializeBinaryTree(@RequestBody SerializeAndDeserializeBinaryTreeSolution.Input input) {
+        SerializeAndDeserializeBinaryTreeSolution sol = new SerializeAndDeserializeBinaryTreeSolution();
+        TreeNode root = sol.deserialize(input.getData());
+        String result = sol.serialize(root);
         return new SerializeAndDeserializeBinaryTreeSolution.Output(result);
     }
 
