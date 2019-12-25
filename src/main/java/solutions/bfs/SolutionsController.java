@@ -27,6 +27,8 @@ public class SolutionsController
                 + "GET /number-of-islands"
                 + "<br>"
                 + "GET /sliding-puzzle"
+                + "<br>"
+                + "GET /maze"
                 ;
     }
 
@@ -119,4 +121,41 @@ public class SolutionsController
         int out = sol.minMoveStep(input.getInitState(), input.getFinalState());
         return new SlidingPuzzleSolution.Output(out);
     }
+
+
+    @GetMapping("/maze")
+    /* requestbody is:
+        {
+            "maze": [
+                        [0,0,1,0,0],
+                        [0,0,0,0,0],
+                        [0,0,0,1,0],
+                        [1,1,0,1,1],
+                        [0,0,0,0,0]
+                    ],
+            "start" : [0,4],
+            "destination": [3,2]
+        }
+
+        {
+
+            "maze": [
+                        [0,0,1,0,0],
+                        [0,0,0,0,0],
+                        [0,0,0,1,0],
+                        [1,1,0,1,1],
+                        [0,0,0,0,0]
+                    ],
+            "start": [0,4],
+            "destination": [4,4]
+        }
+    */
+    public MazeSolution.Output mazeHasPath(@RequestBody MazeSolution.Input input) {
+        MazeSolution sol = new MazeSolution();
+        boolean out = sol.hasPath(input.getMaze(), input.getStart(), input.getDestination());
+        return new MazeSolution.Output(out);
+    }
 }
+
+
+
