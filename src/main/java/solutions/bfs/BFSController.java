@@ -93,6 +93,18 @@ public class BFSController
         })}).then(res => res.json()).then(a => console.log(a));
     Promise {<pending>}
     VM1036:8 {days: 2}
+
+    here the workspace will shutdown after 30mins 
+
+    deploy it to heroku to persist it
+    https://devcenter.heroku.com/articles/deploying-spring-boot-apps-to-heroku
+
+    deployed it to
+    https://dawei-spring.herokuapp.com
+
+    github is here /Users/daweidai/Downloads/spring-boot-restful-services-master on your own mac
+
+    in order for gitpod to push to your github, give it permission
     */
     public ZombieMatrixSolution.Output zombieMatrix(@RequestBody ZombieMatrixSolution.Input input) {
         ZombieMatrixSolution sol = new ZombieMatrixSolution();
