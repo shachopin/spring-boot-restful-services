@@ -5,7 +5,9 @@ import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 
 import org.springframework.http.converter.json.MappingJacksonValue;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -71,13 +73,26 @@ public class BFSController
         return new WordLadderSolution.Output(out);
     }
 
-    @GetMapping("/zombie-matrix")
-    /* requestbody is:
+    @CrossOrigin
+    @PostMapping("/zombie-matrix")
+    /* 
+        requestbody is:
         {
            "grid": [[0,1,2,0,0],
                     [1,0,0,2,1],
                     [0,1,0,0,0]]
         }
+    //注意本来上面是GetMapping,但是window.fetch的get不让传body），虽然postman可以，also没有crossOrigin也会fail,虽然postman里也可以
+    fetch('https://8080-scarlet-goose-8dr9ngpg.ws-us17.gitpod.io/zombie-matrix', {method: 'post', headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }, body: JSON.stringify({
+           "grid": [[0,1,2,0,0],
+                    [1,0,0,2,1],
+                    [0,1,0,0,0]]
+        })}).then(res => res.json()).then(a => console.log(a));
+    Promise {<pending>}
+    VM1036:8 {days: 2}
     */
     public ZombieMatrixSolution.Output zombieMatrix(@RequestBody ZombieMatrixSolution.Input input) {
         ZombieMatrixSolution sol = new ZombieMatrixSolution();
