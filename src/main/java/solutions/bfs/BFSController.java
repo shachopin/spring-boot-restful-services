@@ -102,7 +102,7 @@ public class BFSController
     deployed it to
     https://dawei-spring.herokuapp.com
 
-    github is here /Users/daweidai/Downloads/spring-boot-restful-services-master on your own mac
+    github is here /Users/daweidai/Downloads/spring-boot-restful-services on your own mac
 
     in order for gitpod to push to your github, give it permission
     */
