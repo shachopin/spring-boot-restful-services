@@ -102,7 +102,16 @@ public class BFSController
     deployed it to
     https://dawei-spring.herokuapp.com
 
-    github is here /Users/daweidai/Downloads/spring-boot-restful-services on your own mac
+    fetch('https://dawei-spring.herokuapp.com/zombie-matrix', {method: 'post', headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }, body: JSON.stringify({
+           "grid": [[0,1,2,0,0],
+                    [1,0,0,2,1],
+                    [0,1,0,0,0]]
+        })}).then(res => res.json()).then(a => console.log(a));
+
+    github is here /Users/daweidai/Downloads/spring-boot-restful-services on your own mac after using git clone https://github.com/shachopin/spring-boot-restful-services.git
 
     in order for gitpod to push to your github, give it permission
     */
