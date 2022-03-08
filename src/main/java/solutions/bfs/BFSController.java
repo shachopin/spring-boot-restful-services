@@ -112,8 +112,17 @@ public class BFSController
         })}).then(res => res.json()).then(a => console.log(a));
 
     github is here /Users/daweidai/Downloads/spring-boot-restful-services on your own mac after using git clone https://github.com/shachopin/spring-boot-restful-services.git
-
+   
     in order for gitpod to push to your github, give it permission
+
+    From heroku, you enabled the auto deployment from github: changes to github -> heroku
+
+    To collaborate with another person on another machine having gitpod account logged in though,
+    no need to create team or having that person download your project
+    just share your workspace, and copy the link to give that person the access to your live running workspace, 
+    he can commit stuff under your name
+    
+    https://www.gitpod.io/docs/sharing-and-collaboration#sharing-snapshots
     */
     public ZombieMatrixSolution.Output zombieMatrix(@RequestBody ZombieMatrixSolution.Input input) {
         ZombieMatrixSolution sol = new ZombieMatrixSolution();
