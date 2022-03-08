@@ -18,7 +18,7 @@ public class BFSController
     public String index() {
         return "<b><mark>Greetings from Spring Boot!</mark></b><hr>"
                 + "<br>"
-                + "FROM WORK MACHINE GET /bfs"
+                + "GET /bfs"
                 + "<br>"
                 + "GET /topoSort"
                 + "<br>"
