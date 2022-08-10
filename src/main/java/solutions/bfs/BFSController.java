@@ -22,6 +22,7 @@ public class BFSController
                 + "<br>"
                 + "GET /topoSort"
                 + "<br>"
+                + "GET /dfs"
                 ;
     }
 
@@ -33,7 +34,7 @@ public class BFSController
                 + "<br>"
                 + "GET /word-ladder"
                 + "<br>"
-                + "GET /zombie-matrix"
+                + "POST /zombie-matrix"
                 + "<br>"
                 + "GET /serialize-and-deserialize-binary-tree"
                 + "<br>"
