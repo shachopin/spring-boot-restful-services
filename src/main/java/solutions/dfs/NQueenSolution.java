@@ -18,7 +18,6 @@ public class NQueenSolution {
 
     private void dfs(int n, List<List<String>> res, List<Integer> temp, boolean[] visited) {
         if (temp.size() == n) {
-            //res.add
             res.add(converToBoard(temp, n));
             return;
         }
