@@ -1,5 +1,6 @@
 package solutions.topoSort;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,7 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TopoSortController
 {
-
+    @Autowired
+    private CourseScheduleSolution courseScheduleSolution;
     @GetMapping("/topoSort")
     public String topoSortIndex() {
         return "<b><mark>Greetings from Spring Boot!</mark></b><hr>"
@@ -25,8 +27,7 @@ public class TopoSortController
         }
     */
     public CourseScheduleSolution.Output courseOrder(@RequestBody CourseScheduleSolution.Input input) {
-        CourseScheduleSolution sol = new CourseScheduleSolution();
-        int[] out = sol.findOrder(input.getNumCourses(), input.getPrerequisites());
+        int[] out = courseScheduleSolution.findOrder(input.getNumCourses(), input.getPrerequisites());
         return new CourseScheduleSolution.Output(out);
     }
 }

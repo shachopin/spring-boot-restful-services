@@ -1,6 +1,9 @@
 package solutions.topoSort;
 import java.util.*;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class CourseScheduleSolution {
     /*
      * @param numCourses: a total of n courses
