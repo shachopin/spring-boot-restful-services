@@ -1,6 +1,8 @@
 package solutions.dfs;
 import java.util.*;
 
+import org.springframework.stereotype.Component;
+@Component
 public class NQueenSolution {
     /**
      * @param n: The number of queens

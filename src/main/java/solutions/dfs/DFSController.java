@@ -1,6 +1,6 @@
 package solutions.dfs;
 
-import org.springframework.http.converter.json.MappingJacksonValue;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.*;
 @RestController
 public class DFSController
-{
+{   @Autowired
+    private NQueenSolution nQueenSol;
+
     @GetMapping("/dfs")
     public String bfsIndex() {
         return "<b><mark>Greetings from Spring Boot!</mark></b><hr>"
@@ -28,8 +30,7 @@ public class DFSController
         }
     */
     public NQueenSolution.Output nqueen(@RequestBody NQueenSolution.Input input) {
-        NQueenSolution sol = new NQueenSolution();
-        List<List<String>> out = sol.solveNQueens(input.getQueens());
+        List<List<String>> out = nQueenSol.solveNQueens(input.getQueens());
         return new NQueenSolution.Output(out);
     }
     
