@@ -5,6 +5,7 @@ import java.util.Arrays;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @SpringBootApplication
 public class Application {
@@ -19,6 +20,19 @@ public class Application {
         for (String beanName : beanNames) {
             System.out.println(beanName);
         }
+    }
+
+
+    @GetMapping("/")
+    public String index() {
+        return "<b><mark>Greetings from Spring Boot!</mark></b><hr>"
+                + "<br>"
+                + "GET /bfs"
+                + "<br>"
+                + "GET /topoSort"
+                + "<br>"
+                + "GET /dfs"
+                ;
     }
 
 }

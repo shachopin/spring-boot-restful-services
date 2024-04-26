@@ -14,18 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BFSController
 {
-    @GetMapping("/")
-    public String index() {
-        return "<b><mark>Greetings from Spring Boot!</mark></b><hr>"
-                + "<br>"
-                + "GET /bfs"
-                + "<br>"
-                + "GET /topoSort"
-                + "<br>"
-                + "GET /dfs"
-                ;
-    }
-
+    
     @GetMapping("/bfs")
     public String bfsIndex() {
         return "<b><mark>Greetings from Spring Boot!</mark></b><hr>"
