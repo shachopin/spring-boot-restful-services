@@ -33,7 +33,7 @@ public class DFSController
            "queens": 4
         }
 
-        fetch('https://8080-shachopin-springbootres-vj2jbqk7wsk.ws-us115.gitpod.io/n-queen', {method: 'post', headers: {
+        fetch('https://dawei-spring.herokuapp.com/n-queen', {method: 'post', headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
         }, body: JSON.stringify({
@@ -54,7 +54,7 @@ public class DFSController
            "nums": [1,2,3]
         }
 
-        fetch('https://8080-shachopin-springbootres-vj2jbqk7wsk.ws-us115.gitpod.io/permutation-i', {method: 'post', headers: {
+        fetch('https://dawei-spring.herokuapp.com/permutation-i', {method: 'post', headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
         }, body: JSON.stringify({
