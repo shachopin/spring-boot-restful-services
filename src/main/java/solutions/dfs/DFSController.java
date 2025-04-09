@@ -37,7 +37,7 @@ public class DFSController
         'Accept': 'application/json',
         'Content-Type': 'application/json'
         }, body: JSON.stringify({
-            "queens": [1,2,3]
+            "queens": 4
             })}).then(res => res.json()).then(a => console.log(a));
     */
     public NQueenSolution.Output nqueen(@RequestBody NQueenSolution.Input input) {
