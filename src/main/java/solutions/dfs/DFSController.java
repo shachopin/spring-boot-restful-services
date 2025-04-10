@@ -16,7 +16,7 @@ public class DFSController
     private PermutationISolution permutationISolution; 
 
     @GetMapping("/dfs")
-    public String bfsIndex() {
+    public String dfsIndex() {
         return "<b><mark>Greetings from Spring Boot!</mark></b><hr>"
                 + "<br>"
                 + "POST /n-queen"

@@ -34,6 +34,8 @@ public class Application {
                 + "GET /topoSort"
                 + "<br>"
                 + "GET /dfs"
+                + "<br>"
+                + "GET /trie"
                 ;
     }
 
