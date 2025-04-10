@@ -30,8 +30,3 @@ public class AutoCompleteSolution {
         }
     }
 }
-
-class TrieNode {
-    TrieNode[] next = new TrieNode[26];
-    Set<String> words = new HashSet<>();
-}

@@ -49,6 +49,7 @@ public class TrieController
             autoCompleteSolution.buildTrie(words, root);
             return "Words upload success!";
         }
+        
         if (clearAll) {
             root = new TrieNode();
             return "All words deleted";
